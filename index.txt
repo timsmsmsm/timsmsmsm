@@ -2,23 +2,23 @@ vCard - Personal Portfolio
 
 # sidebar
 
-alt = Richard hanrick
-Richard hanrick
+alt = Tim Huygelen
+Tim Huygelen
 Web developer
 
 Show Contacts
 
 Email
-richard@example.com
+thuygelen@gmail.com
 
 Phone
-+1 (213) 352-2795
++44 07547311095
 
 Birthday
-June 23, 1982
+November 11, 2002
 
 Location
-Sacramento, California, USA
+London, UK
 
 # navbar
 

@@ -829,6 +829,17 @@ main {
   line-height: 1.6;
 }
 
+.manual-list {
+  margin-top: 10px;
+}
+
+.manual-list-item {
+  margin-left: 20px; /* Adjust the left margin for indentation */
+  margin-bottom: 10px; /* Add space between list items */
+  text-indent: -20px; /* Negative indent to align the dash */
+  padding-left: 20px; /* Padding to align the text properly */
+  color: var(--light-gray); /* Ensure text color is light gray */
+}
 
 /**
  * skills 
@@ -1341,6 +1352,13 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .avatar-box img { width: 120px; }
 
+  .avatar-image {
+    border-radius: 15%; /* Adjust the percentage to get the desired squircle effect */
+    width: 100%; /* Ensure the width is consistent */
+    aspect-ratio: 1 / 1; /* Maintain a 1:1 aspect ratio */
+    object-fit: cover; /* Ensure the image covers the container without stretching */
+  }
+
   .info-content .name { margin-bottom: 15px; }
 
   .info-content .title { padding: 5px 18px; }
@@ -1363,8 +1381,8 @@ textarea.form-input::-webkit-resizer { display: none; }
   .contacts-list { gap: 20px; }
 
   .contact-info {
-    max-width: calc(100% - 64px);
-    width: calc(100% - 64px);
+    max-width: calc(100% - 32px);
+    width: calc(100% - 32px);
   }
 
 
