@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Image Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-y: auto;
+        }
+
+        #imageContainer {
+            column-gap: 20px; /* Gap between columns */
+            max-width: 90%;
+        }
+
+        #imageContainer img {
+            width: 100%;
+            margin-bottom: 20px; /* Consistent gap between images */
+            break-inside: avoid; /* Prevents image breaks between columns */
+        }
+
+        /* Responsive Columns */
+        @media (min-width: 1200px) {
+            #imageContainer {
+                column-count: 4; /* 4 columns for large screens */
+            }
+        }
+
+        @media (min-width: 900px) and (max-width: 1199px) {
+            #imageContainer {
+                column-count: 3; /* 3 columns for medium screens */
+            }
+        }
+
+        @media (min-width: 600px) and (max-width: 899px) {
+            #imageContainer {
+                column-count: 2; /* 2 columns for small screens */
+            }
+        }
+
+        @media (max-width: 599px) {
+            #imageContainer {
+                column-count: 1; /* 1 column for very small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="imageContainer">
+        <img src="assets/artworks/art-1.png" alt="Image 1">
+        <img src="assets/artworks/art-2.png" alt="Image 2">
+        <img src="assets/artworks/art-3.png" alt="Image 3">
+        <img src="assets/artworks/art-4.png" alt="Image 4">
+        <img src="assets/artworks/art-5.png" alt="Image 5">
+        <img src="assets/artworks/art-6.png" alt="Image 6">
+        <img src="assets/artworks/art-7.png" alt="Image 7">
+        <img src="assets/artworks/art-8.png" alt="Image 8">
+        <img src="assets/artworks/art-9.png" alt="Image 9">
+        <img src="assets/artworks/art-10.png" alt="Image 10">
+        <img src="assets/artworks/art-11.png" alt="Image 11">
+        <img src="assets/artworks/art-12.png" alt="Image 12">
+        <img src="assets/artworks/art-13.png" alt="Image 13">
+        <img src="assets/artworks/art-14.png" alt="Image 14">
+        <img src="assets/artworks/art-15.png" alt="Image 15">
+        <img src="assets/artworks/art-16.png" alt="Image 16">
+        <img src="assets/artworks/art-17.png" alt="Image 17">
+        <img src="assets/artworks/art-18.png" alt="Image 18">
+        <img src="assets/artworks/art-19.png" alt="Image 19">
+        <img src="assets/artworks/art-20.png" alt="Image 20">
+        <img src="assets/artworks/art-21.png" alt="Image 21">
+        <img src="assets/artworks/art-22.png" alt="Image 22">
+        <img src="assets/artworks/art-23.png" alt="Image 23">
+    </div>
+
+    <script>
+        // Function to shuffle an array (Fisher-Yates Shuffle Algorithm)
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        function randomizeImages() {
+            const imageContainer = document.getElementById('imageContainer');
+            const images = Array.from(imageContainer.children); // Get all images
+
+            const shuffledImages = shuffleArray(images); // Shuffle images
+
+            // Clear the container and re-append the images in random order
+            imageContainer.innerHTML = '';
+            shuffledImages.forEach(image => imageContainer.appendChild(image));
+        }
+
+        // Randomize images on page load
+        window.addEventListener('load', randomizeImages);
+    </script>
+</body>
+</html>
